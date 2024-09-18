@@ -1,53 +1,4 @@
-# Import required libraries and modules
 import os
-from dictionary import food_menu, drinks_menu, book_collection, customers, Customer_Order_Preference
-from specials import get_day_of_week, display_introduction
-
-# Name of the Book Cafe
-book_shop = 'pythoneers'
-
-# List that will contain customer order
-order = []
-
-def main_menu():
-    print(f"Welcome to the {book_shop.title()} book cafe!\n")
-
-    print("instruction")
-
-    print()
-
-    print("1. Select to see food and drinks menu")
-    print("2. Select for best-selling book collection")
-    print("3. View Today's specials")
-    print("4. Employee section")
-    print("5. View order")
-    print("6. Submit Order")
-    print("7. Exit")
-
-    choice = int(input("\nWhat would you like today: "))
-
-    if choice == 1:
-        clear_console()
-        food_drinks_menu()
-    elif choice == 2:
-        clear_console()
-        view_book_collection()
-        order_input(book_collection)
-    elif choice == 3:
-        clear_console()
-        display_introduction()
-    elif choice == 4:
-        clear_console()
-        employee_menu()
-    elif choice == 5:
-        view_order()
-        view_total()
-    elif choice == 6:
-        clear_console()
-        finalize_order()
-    else:
-        print("Thank you for coming.")
-        exit()
 
 def order_input(menu_dict):
     while True:
@@ -78,7 +29,7 @@ def view_book_collection():
         print(f"-- {book} £{price}")
 
     print("\nRemember: Books are free with book pass.")
-    
+
 def food_drinks_menu():
     print("\n Would you like the Food or Drinks menu:")
 
@@ -87,7 +38,7 @@ def food_drinks_menu():
     print("3. View order")
     print("4. Go back to main menu")
 
-    choice = int(input("\nInput choice here: "))
+    choice = int(input("\nInput choice here:"))
     
     if choice == 1:
         clear_console()
@@ -112,7 +63,7 @@ def employee_menu():
     print("2. Get customer info")
     print("3. Go back to main menu")
 
-    choice = int(input("\nInput choice here: "))
+    choice = int(input("\nInput choice here:"))
 
     if choice == 1:
         update_book( input("Book name: "), input("Insert new price: "))
@@ -200,7 +151,7 @@ def submit_order():
     print("2. Returning Customer")
     print("3. Cancel")
 
-    choice = int(input("--> "))
+    choice = int(input("-->"))
 
     if choice == 1:
         new_cust_name = input("Please enter your full name: ").title()
@@ -251,8 +202,3 @@ def returning_customer():
         print("Account not found, please try again.")
         clear_console()
         returning_customer()
-
-
-clear_console()
-while True:
-    main_menu()
