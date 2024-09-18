@@ -18,7 +18,7 @@ order = ["Coffee", "Book_1"]
 customers = []
 
 class Customer:
- def __init__(self, name, address) -> None:
+  def __init__(self, name, address) -> None:
   self.name = name
   self.address = address
   self.order = []
